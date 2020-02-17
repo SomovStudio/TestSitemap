@@ -151,8 +151,9 @@ namespace TestSitemap
                         Action action3 = () => textBox3.Text = textBox3.Text + link + " STATUS: " + statusCode.ToString() + Environment.NewLine;
                         textBox3.Invoke(action3);
                     }
-                    
-                    Action action2 = () => textBox2.Text = textBox2.Text + "[" + index.ToString() + " / " + count.ToString() + "] " + link + " STATUS: " + statusCode.ToString() + Environment.NewLine;
+
+                    process = textBox2.Text;
+                    Action action2 = () => textBox2.Text = "[" + index.ToString() + " / " + count.ToString() + "] " + link + " STATUS: " + statusCode.ToString() + Environment.NewLine + process;
                     textBox2.Invoke(action2);
                     index++;
                 }
@@ -202,7 +203,8 @@ namespace TestSitemap
                         textBox3.Invoke(action3);
                     }
 
-                    Action action2 = () => textBox2.Text = textBox2.Text + "[" + index.ToString() + " / " + count.ToString() + "] " + link + " STATUS: " + statusCode.ToString() + Environment.NewLine;
+                    process = textBox2.Text;
+                    Action action2 = () => textBox2.Text = "[" + index.ToString() + " / " + count.ToString() + "] " + link + " STATUS: " + statusCode.ToString() + Environment.NewLine + process;
                     textBox2.Invoke(action2);
                     index++;
                 }
