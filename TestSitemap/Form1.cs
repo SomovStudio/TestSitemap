@@ -54,12 +54,11 @@ namespace TestSitemap
             toolStripStatusLabel4.Text = "0:00";
 
             CheckLocal();
-
-            toolStripStatusLabel4.Text = DateTime.Now.ToString();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
+            TestEnd();
             try
             {
                 thread.Abort();
@@ -107,11 +106,11 @@ namespace TestSitemap
             toolStripStatusLabel4.Text = "0:00";
 
             CheckURL();
-            toolStripStatusLabel4.Text = DateTime.Now.ToString();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
+            TestEnd();
             try
             {
                 thread.Abort();
@@ -164,9 +163,11 @@ namespace TestSitemap
             }
             finally
             {
+                TestEnd();
                 thread.Abort();
             }
 
+            TestEnd();
             thread.Abort();
         }
 
@@ -212,8 +213,10 @@ namespace TestSitemap
             }
             finally
             {
+                TestEnd();
                 thread.Abort();
             }
+            TestEnd();
             thread.Abort();
         }
         private ArrayList readUrlXML(string filename)
@@ -229,6 +232,11 @@ namespace TestSitemap
             }
 
             return list;
+        }
+
+        private void TestEnd()
+        {
+            toolStripStatusLabel4.Text = DateTime.Now.ToString();
         }
 
         private void сохранитьСписокПроверкиToolStripMenuItem_Click(object sender, EventArgs e)
