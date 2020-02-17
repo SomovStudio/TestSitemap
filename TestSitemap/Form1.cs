@@ -24,9 +24,26 @@ namespace TestSitemap
             InitializeComponent();
         }
 
+        private void Form1_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            try
+            {
+                thread.Abort();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+            }
+        }
+
         private void закрытьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            thread = new Thread(Test);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -97,6 +114,8 @@ namespace TestSitemap
             }
         }
 
+        private Thread thread;
+
         private void button3_Click(object sender, EventArgs e)
         {
             textBox2.Text = "";
@@ -108,11 +127,23 @@ namespace TestSitemap
             toolStripStatusLabel4.Text = DateTime.Now.ToString();
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                thread.Abort();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+            }
+        }
+        
         private void CheckURL()
         {
             //https://rsdn.org/article/dotnet/CSThreading1.xml
             //http://www.cyberforum.ru/windows-forms/thread642295.html
-            Thread thread = new Thread(Test);
+            thread = new Thread(Test);
             thread.Start();
         }
 
@@ -148,6 +179,12 @@ namespace TestSitemap
             {
                 MessageBox.Show(error.Message);
             }
+            finally
+            {
+                thread.Abort();
+            }
+
+            thread.Abort();
         }
 
         private ArrayList readUrlXML(string filename)
@@ -191,5 +228,6 @@ namespace TestSitemap
             about.ShowDialog();
         }
 
+        
     }
 }
