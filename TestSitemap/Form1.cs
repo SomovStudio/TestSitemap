@@ -40,12 +40,15 @@ namespace TestSitemap
                 ArrayList listLinks = readXML(textBox1.Text);
                 int count = listLinks.Count;
                 int index = 1;
-                foreach(String link in listLinks)
+                String process = "";
+                HttpClient client;
+                HttpResponseMessage response;
+                foreach (String link in listLinks)
                 {
-                    HttpClient client = new HttpClient();
+                    client = new HttpClient();
                     client.BaseAddress = new Uri(link);
 
-                    HttpResponseMessage response = client.GetAsync(link).Result;
+                    response = client.GetAsync(link).Result;
                     int statusCode = (int)response.StatusCode;
 
                     if (statusCode != 200)
@@ -53,7 +56,7 @@ namespace TestSitemap
                         textBox3.Text = textBox3.Text + link + " STATUS: " + statusCode.ToString() + Environment.NewLine;
                         textBox3.ScrollToCaret();
                     }
-                    String process = textBox2.Text;
+                    process = textBox2.Text;
                     textBox2.Text = "[" + index.ToString() + " / " + count.ToString() + "] " + link + " STATUS: " + statusCode.ToString() + Environment.NewLine + process;
                     index++;
                     this.Update();
@@ -106,12 +109,15 @@ namespace TestSitemap
                 ArrayList listLinks = readUrlXML(textBox4.Text);
                 int count = listLinks.Count;
                 int index = 1;
+                String process = "";
+                HttpClient client;
+                HttpResponseMessage response;
                 foreach (String link in listLinks)
                 {
-                    HttpClient client = new HttpClient();
+                    client = new HttpClient();
                     client.BaseAddress = new Uri(link);
 
-                    HttpResponseMessage response = client.GetAsync(link).Result;
+                    response = client.GetAsync(link).Result;
                     int statusCode = (int)response.StatusCode;
 
                     if (statusCode != 200)
@@ -119,7 +125,7 @@ namespace TestSitemap
                         textBox3.Text = textBox3.Text + link + " STATUS: " + statusCode.ToString() + Environment.NewLine;
                         textBox3.ScrollToCaret();
                     }
-                    String process = textBox2.Text;
+                    process = textBox2.Text;
                     textBox2.Text = "[" + index.ToString() + " / " + count.ToString() + "] " + link + " STATUS: " + statusCode.ToString() + Environment.NewLine + process;
                     index++;
                     this.Update();
