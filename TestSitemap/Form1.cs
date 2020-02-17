@@ -104,6 +104,20 @@ namespace TestSitemap
             toolStripStatusLabel2.Text = DateTime.Now.ToString();
             toolStripStatusLabel4.Text = "0:00";
 
+            CheckURL();
+            toolStripStatusLabel4.Text = DateTime.Now.ToString();
+        }
+
+        private void CheckURL()
+        {
+            //https://rsdn.org/article/dotnet/CSThreading1.xml
+            //http://www.cyberforum.ru/windows-forms/thread642295.html
+            Thread thread = new Thread(Test);
+            thread.Start();
+        }
+
+        private void Test()
+        {
             try
             {
                 ArrayList listLinks = readUrlXML(textBox4.Text);
@@ -119,23 +133,21 @@ namespace TestSitemap
 
                     response = client.GetAsync(link).Result;
                     int statusCode = (int)response.StatusCode;
-
                     if (statusCode != 200)
                     {
-                        textBox3.Text = textBox3.Text + link + " STATUS: " + statusCode.ToString() + Environment.NewLine;
-                        textBox3.ScrollToCaret();
+                        Action action3 = () => textBox3.Text = textBox3.Text + link + " STATUS: " + statusCode.ToString() + Environment.NewLine;
+                        textBox3.Invoke(action3);
                     }
-                    process = textBox2.Text;
-                    textBox2.Text = "[" + index.ToString() + " / " + count.ToString() + "] " + link + " STATUS: " + statusCode.ToString() + Environment.NewLine + process;
+                    
+                    Action action2 = () => textBox2.Text = textBox2.Text + "[" + index.ToString() + " / " + count.ToString() + "] " + link + " STATUS: " + statusCode.ToString() + Environment.NewLine;
+                    textBox2.Invoke(action2);
                     index++;
-                    this.Update();
                 }
             }
             catch (Exception error)
             {
                 MessageBox.Show(error.Message);
-            }            
-            toolStripStatusLabel4.Text = DateTime.Now.ToString();
+            }
         }
 
         private ArrayList readUrlXML(string filename)
@@ -178,5 +190,6 @@ namespace TestSitemap
             AboutForm about = new AboutForm();
             about.ShowDialog();
         }
+
     }
 }
