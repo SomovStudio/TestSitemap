@@ -43,7 +43,7 @@ namespace TestSitemap
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            thread = new Thread(Test);
+            thread = new Thread(TestUrl);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -53,38 +53,21 @@ namespace TestSitemap
             toolStripStatusLabel2.Text = DateTime.Now.ToString();
             toolStripStatusLabel4.Text = "0:00";
 
-            try { 
-                ArrayList listLinks = readXML(textBox1.Text);
-                int count = listLinks.Count;
-                int index = 1;
-                String process = "";
-                HttpClient client;
-                HttpResponseMessage response;
-                foreach (String link in listLinks)
-                {
-                    client = new HttpClient();
-                    client.BaseAddress = new Uri(link);
+            CheckLocal();
 
-                    response = client.GetAsync(link).Result;
-                    int statusCode = (int)response.StatusCode;
+            toolStripStatusLabel4.Text = DateTime.Now.ToString();
+        }
 
-                    if (statusCode != 200)
-                    {
-                        textBox3.Text = textBox3.Text + link + " STATUS: " + statusCode.ToString() + Environment.NewLine;
-                        textBox3.ScrollToCaret();
-                    }
-                    process = textBox2.Text;
-                    textBox2.Text = "[" + index.ToString() + " / " + count.ToString() + "] " + link + " STATUS: " + statusCode.ToString() + Environment.NewLine + process;
-                    index++;
-                    this.Update();
-                }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                thread.Abort();
             }
             catch (Exception error)
             {
                 MessageBox.Show(error.Message);
             }
-
-            toolStripStatusLabel4.Text = DateTime.Now.ToString();
         }
 
         private ArrayList readXML(string filename)
@@ -143,11 +126,11 @@ namespace TestSitemap
         {
             //https://rsdn.org/article/dotnet/CSThreading1.xml
             //http://www.cyberforum.ru/windows-forms/thread642295.html
-            thread = new Thread(Test);
+            thread = new Thread(TestUrl);
             thread.Start();
         }
 
-        private void Test()
+        private void TestUrl()
         {
             try
             {
@@ -187,6 +170,52 @@ namespace TestSitemap
             thread.Abort();
         }
 
+        private void CheckLocal()
+        {
+            //https://rsdn.org/article/dotnet/CSThreading1.xml
+            //http://www.cyberforum.ru/windows-forms/thread642295.html
+            thread = new Thread(TestLocal);
+            thread.Start();
+        }
+
+        private void TestLocal()
+        {
+            try
+            {
+                ArrayList listLinks = readXML(textBox1.Text);
+                int count = listLinks.Count;
+                int index = 1;
+                String process = "";
+                HttpClient client;
+                HttpResponseMessage response;
+                foreach (String link in listLinks)
+                {
+                    client = new HttpClient();
+                    client.BaseAddress = new Uri(link);
+
+                    response = client.GetAsync(link).Result;
+                    int statusCode = (int)response.StatusCode;
+                    if (statusCode != 200)
+                    {
+                        Action action3 = () => textBox3.Text = textBox3.Text + link + " STATUS: " + statusCode.ToString() + Environment.NewLine;
+                        textBox3.Invoke(action3);
+                    }
+
+                    Action action2 = () => textBox2.Text = textBox2.Text + "[" + index.ToString() + " / " + count.ToString() + "] " + link + " STATUS: " + statusCode.ToString() + Environment.NewLine;
+                    textBox2.Invoke(action2);
+                    index++;
+                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+            }
+            finally
+            {
+                thread.Abort();
+            }
+            thread.Abort();
+        }
         private ArrayList readUrlXML(string filename)
         {
             ArrayList list = new ArrayList();
@@ -227,7 +256,5 @@ namespace TestSitemap
             AboutForm about = new AboutForm();
             about.ShowDialog();
         }
-
-        
     }
 }
