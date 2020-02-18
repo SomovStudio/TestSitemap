@@ -73,18 +73,27 @@ namespace TestSitemap
         {
             ArrayList list = new ArrayList();
 
-            XmlDataDocument xmldoc = new XmlDataDocument();
-            XmlNodeList xmlnode;
-            int i = 0;
-            string str = null;
-            FileStream fs = new FileStream(@filename, FileMode.Open, FileAccess.Read);
-            xmldoc.Load(fs);
-            xmlnode = xmldoc.GetElementsByTagName("url");
-            for (i = 0; i <= xmlnode.Count - 1; i++)
+            try
             {
-                string link = xmlnode[i].ChildNodes.Item(0).InnerText.Trim();
-                list.Add(link);
+                XmlDataDocument xmldoc = new XmlDataDocument();
+                XmlNodeList xmlnode;
+                int i = 0;
+                string str = null;
+                FileStream fs = new FileStream(@filename, FileMode.Open, FileAccess.Read);
+                xmldoc.Load(fs);
+                xmlnode = xmldoc.GetElementsByTagName("url");
+                for (i = 0; i <= xmlnode.Count - 1; i++)
+                {
+                    string link = xmlnode[i].ChildNodes.Item(0).InnerText.Trim();
+                    list.Add(link);
+                }
             }
+            catch (Exception error)
+            {
+                if (подробноеОписаниеОшибокToolStripMenuItem.Checked == false) MessageBox.Show(error.Message);
+                else MessageBox.Show(error.ToString());
+            }
+                        
             return list;
         }
 
@@ -160,7 +169,8 @@ namespace TestSitemap
             }
             catch (Exception error)
             {
-                MessageBox.Show(error.Message);
+                if (подробноеОписаниеОшибокToolStripMenuItem.Checked == false) MessageBox.Show(error.Message);
+                else MessageBox.Show(error.ToString());
             }
             finally
             {
@@ -211,7 +221,8 @@ namespace TestSitemap
             }
             catch (Exception error)
             {
-                MessageBox.Show(error.Message);
+                if (подробноеОписаниеОшибокToolStripMenuItem.Checked == false) MessageBox.Show(error.Message);
+                else MessageBox.Show(error.ToString());
             }
             finally
             {
@@ -224,21 +235,30 @@ namespace TestSitemap
         private ArrayList readUrlXML(string filename)
         {
             ArrayList list = new ArrayList();
- 
-            XmlDocument xDoc = new XmlDocument();
-            xDoc.Load(filename);
-            XmlElement xRoot = xDoc.DocumentElement;
-            foreach (XmlNode xnode in xRoot)
-            {
-                list.Add(xnode.ChildNodes[0].InnerText);
-            }
 
+            try
+            {
+                XmlDocument xDoc = new XmlDocument();
+                xDoc.Load(filename);
+                XmlElement xRoot = xDoc.DocumentElement;
+                foreach (XmlNode xnode in xRoot)
+                {
+                    list.Add(xnode.ChildNodes[0].InnerText);
+                }
+            }
+            catch (Exception error)
+            {
+                if (подробноеОписаниеОшибокToolStripMenuItem.Checked == false) MessageBox.Show(error.Message);
+                else MessageBox.Show(error.ToString());
+            }
+            
             return list;
         }
 
         private void TestEnd()
         {
             toolStripStatusLabel4.Text = DateTime.Now.ToString();
+            MessageBox.Show("Процесс проверки - завершен!");
         }
 
         private void сохранитьСписокПроверкиToolStripMenuItem_Click(object sender, EventArgs e)
@@ -265,6 +285,12 @@ namespace TestSitemap
         {
             AboutForm about = new AboutForm();
             about.ShowDialog();
+        }
+
+        private void подробноеОписаниеОшибокToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if(подробноеОписаниеОшибокToolStripMenuItem.Checked == false) подробноеОписаниеОшибокToolStripMenuItem.Checked = true;
+            else подробноеОписаниеОшибокToolStripMenuItem.Checked = false;
         }
     }
 }

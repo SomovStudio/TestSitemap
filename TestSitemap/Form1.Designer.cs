@@ -69,6 +69,9 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.подробноеОписаниеОшибокToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -117,6 +120,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.panel5);
             this.tabPage1.Controls.Add(this.button4);
             this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.textBox4);
@@ -265,7 +269,8 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.файлToolStripMenuItem,
-            this.справкаToolStripMenuItem});
+            this.справкаToolStripMenuItem,
+            this.настройкиToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(784, 24);
@@ -417,6 +422,7 @@
             this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox2.BackColor = System.Drawing.Color.White;
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox2.Location = new System.Drawing.Point(3, 16);
             this.textBox2.Multiline = true;
@@ -425,6 +431,7 @@
             this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox2.Size = new System.Drawing.Size(387, 377);
             this.textBox2.TabIndex = 0;
+            this.textBox2.WordWrap = false;
             // 
             // panel4
             // 
@@ -463,6 +470,7 @@
             this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox3.BackColor = System.Drawing.Color.White;
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox3.Location = new System.Drawing.Point(3, 16);
             this.textBox3.Multiline = true;
@@ -471,6 +479,7 @@
             this.textBox3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.textBox3.Size = new System.Drawing.Size(380, 377);
             this.textBox3.TabIndex = 1;
+            this.textBox3.WordWrap = false;
             // 
             // openFileDialog1
             // 
@@ -479,6 +488,28 @@
             // saveFileDialog1
             // 
             this.saveFileDialog1.Filter = "*.txt|*.txt|*.*|*.*";
+            // 
+            // panel5
+            // 
+            this.panel5.Location = new System.Drawing.Point(51, 44);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(200, 16);
+            this.panel5.TabIndex = 5;
+            // 
+            // настройкиToolStripMenuItem
+            // 
+            this.настройкиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.подробноеОписаниеОшибокToolStripMenuItem});
+            this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
+            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
+            this.настройкиToolStripMenuItem.Text = "Настройки";
+            // 
+            // подробноеОписаниеОшибокToolStripMenuItem
+            // 
+            this.подробноеОписаниеОшибокToolStripMenuItem.Name = "подробноеОписаниеОшибокToolStripMenuItem";
+            this.подробноеОписаниеОшибокToolStripMenuItem.Size = new System.Drawing.Size(241, 22);
+            this.подробноеОписаниеОшибокToolStripMenuItem.Text = "Подробное описание ошибок";
+            this.подробноеОписаниеОшибокToolStripMenuItem.Click += new System.EventHandler(this.подробноеОписаниеОшибокToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -561,6 +592,9 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.ToolStripMenuItem настройкиToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem подробноеОписаниеОшибокToolStripMenuItem;
     }
 }
 
