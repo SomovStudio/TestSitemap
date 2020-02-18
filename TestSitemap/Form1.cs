@@ -292,5 +292,17 @@ namespace TestSitemap
             if(подробноеОписаниеОшибокToolStripMenuItem.Checked == false) подробноеОписаниеОшибокToolStripMenuItem.Checked = true;
             else подробноеОписаниеОшибокToolStripMenuItem.Checked = false;
         }
+
+        private void валидаторXMLSitemapToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(@"https://www.xml-sitemaps.com/validate-xml-sitemap.html");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка");
+            }
+        }
     }
 }

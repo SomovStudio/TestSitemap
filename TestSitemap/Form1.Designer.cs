@@ -53,6 +53,8 @@
             this.закрытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.подробноеОписаниеОшибокToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
@@ -69,9 +71,8 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.подробноеОписаниеОшибокToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.сервисToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.валидаторXMLSitemapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -120,7 +121,6 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.panel5);
             this.tabPage1.Controls.Add(this.button4);
             this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.textBox4);
@@ -269,8 +269,9 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.файлToolStripMenuItem,
-            this.справкаToolStripMenuItem,
-            this.настройкиToolStripMenuItem});
+            this.сервисToolStripMenuItem,
+            this.настройкиToolStripMenuItem,
+            this.справкаToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(784, 24);
@@ -325,9 +326,24 @@
             // оПрограммеToolStripMenuItem
             // 
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
+            // 
+            // настройкиToolStripMenuItem
+            // 
+            this.настройкиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.подробноеОписаниеОшибокToolStripMenuItem});
+            this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
+            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
+            this.настройкиToolStripMenuItem.Text = "Настройки";
+            // 
+            // подробноеОписаниеОшибокToolStripMenuItem
+            // 
+            this.подробноеОписаниеОшибокToolStripMenuItem.Name = "подробноеОписаниеОшибокToolStripMenuItem";
+            this.подробноеОписаниеОшибокToolStripMenuItem.Size = new System.Drawing.Size(241, 22);
+            this.подробноеОписаниеОшибокToolStripMenuItem.Text = "Подробное описание ошибок";
+            this.подробноеОписаниеОшибокToolStripMenuItem.Click += new System.EventHandler(this.подробноеОписаниеОшибокToolStripMenuItem_Click);
             // 
             // statusStrip1
             // 
@@ -489,27 +505,20 @@
             // 
             this.saveFileDialog1.Filter = "*.txt|*.txt|*.*|*.*";
             // 
-            // panel5
+            // сервисToolStripMenuItem
             // 
-            this.panel5.Location = new System.Drawing.Point(51, 44);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(200, 16);
-            this.panel5.TabIndex = 5;
+            this.сервисToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.валидаторXMLSitemapToolStripMenuItem});
+            this.сервисToolStripMenuItem.Name = "сервисToolStripMenuItem";
+            this.сервисToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
+            this.сервисToolStripMenuItem.Text = "Сервис";
             // 
-            // настройкиToolStripMenuItem
+            // валидаторXMLSitemapToolStripMenuItem
             // 
-            this.настройкиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.подробноеОписаниеОшибокToolStripMenuItem});
-            this.настройкиToolStripMenuItem.Name = "настройкиToolStripMenuItem";
-            this.настройкиToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
-            this.настройкиToolStripMenuItem.Text = "Настройки";
-            // 
-            // подробноеОписаниеОшибокToolStripMenuItem
-            // 
-            this.подробноеОписаниеОшибокToolStripMenuItem.Name = "подробноеОписаниеОшибокToolStripMenuItem";
-            this.подробноеОписаниеОшибокToolStripMenuItem.Size = new System.Drawing.Size(241, 22);
-            this.подробноеОписаниеОшибокToolStripMenuItem.Text = "Подробное описание ошибок";
-            this.подробноеОписаниеОшибокToolStripMenuItem.Click += new System.EventHandler(this.подробноеОписаниеОшибокToolStripMenuItem_Click);
+            this.валидаторXMLSitemapToolStripMenuItem.Name = "валидаторXMLSitemapToolStripMenuItem";
+            this.валидаторXMLSitemapToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.валидаторXMLSitemapToolStripMenuItem.Text = "Валидатор XML Sitemap";
+            this.валидаторXMLSitemapToolStripMenuItem.Click += new System.EventHandler(this.валидаторXMLSitemapToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -592,9 +601,10 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.ToolStripMenuItem настройкиToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem подробноеОписаниеОшибокToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem сервисToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem валидаторXMLSitemapToolStripMenuItem;
     }
 }
 
