@@ -84,8 +84,16 @@ namespace TestSitemap
                 xmlnode = xmldoc.GetElementsByTagName("url");
                 for (i = 0; i <= xmlnode.Count - 1; i++)
                 {
-                    string link = xmlnode[i].ChildNodes.Item(0).InnerText.Trim();
-                    list.Add(link);
+                    for(int j = 0; j <= xmlnode[i].ChildNodes.Count; j++)
+                    {
+                        if (xmlnode[i].ChildNodes.Item(j).Name == "loc")
+                        {
+                            string link = xmlnode[i].ChildNodes.Item(j).InnerText.Trim();
+                            list.Add(link);
+                            break;
+                        }
+                    }
+                    
                 }
             }
             catch (Exception error)
@@ -243,7 +251,14 @@ namespace TestSitemap
                 XmlElement xRoot = xDoc.DocumentElement;
                 foreach (XmlNode xnode in xRoot)
                 {
-                    list.Add(xnode.ChildNodes[0].InnerText);
+                    for (int j = 0; j <= xnode.ChildNodes.Count; j++)
+                    {
+                        if (xnode.ChildNodes[j].Name == "loc")
+                        {
+                            list.Add(xnode.ChildNodes[j].InnerText);
+                            break;
+                        }
+                    }
                 }
             }
             catch (Exception error)
