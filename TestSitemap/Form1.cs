@@ -319,5 +319,97 @@ namespace TestSitemap
                 MessageBox.Show(ex.Message, "Ошибка");
             }
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog2.ShowDialog() == DialogResult.OK)
+            {
+                textBox5.Text = openFileDialog2.FileName;
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            textBox2.Text = "";
+            textBox3.Text = "";
+            toolStripStatusLabel2.Text = DateTime.Now.ToString();
+            toolStripStatusLabel4.Text = "0:00";
+
+            CheckLocal2();
+        }
+
+        private void CheckLocal2()
+        {
+            thread = new Thread(TestLocal2);
+            thread.Start();
+        }
+
+        private void TestLocal2()
+        {
+            try
+            {
+                ArrayList listLinks = new ArrayList();
+                string path = @textBox5.Text;
+                using (StreamReader sr = new StreamReader(path))
+                {
+                    string line;
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        listLinks.Add(line.ToString());
+                    }
+                }
+
+                int count = listLinks.Count;
+                int index = 1;
+                String process = "";
+                HttpClient client;
+                HttpResponseMessage response;
+                foreach (String link in listLinks)
+                {
+                    client = new HttpClient();
+                    client.BaseAddress = new Uri(link.ToString());
+
+                    response = client.GetAsync(link.ToString()).Result;
+                    int statusCode = (int)response.StatusCode;
+                    if (statusCode != 200)
+                    {
+                        Action action3 = () => textBox3.Text = textBox3.Text + link.ToString() + " STATUS: " + statusCode.ToString() + Environment.NewLine;
+                        textBox3.Invoke(action3);
+                    }
+
+                    process = textBox2.Text;
+                    Action action2 = () => textBox2.Text = "[" + index.ToString() + " / " + count.ToString() + "] " + link.ToString() + " STATUS: " + statusCode.ToString() + Environment.NewLine + process;
+                    textBox2.Invoke(action2);
+                    index++;
+                }
+            }
+            catch (Exception error)
+            {
+                if (подробноеОписаниеОшибокToolStripMenuItem.Checked == false) MessageBox.Show(error.Message);
+                else MessageBox.Show(error.ToString());
+            }
+            finally
+            {
+                TestEnd();
+                thread.Abort();
+            }
+
+            TestEnd();
+            thread.Abort();
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            TestEnd();
+            try
+            {
+                thread.Abort();
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
+            }
+        }
     }
 }
