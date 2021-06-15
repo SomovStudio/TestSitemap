@@ -75,7 +75,13 @@ namespace TestSitemap
 
             try
             {
+                ServicePointManager.Expect100Continue = true;
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+                ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
+
                 XmlDataDocument xmldoc = new XmlDataDocument();
+                xmldoc.PreserveWhitespace = true;
+                xmldoc.XmlResolver = null;
                 XmlNodeList xmlnode;
                 int i = 0;
                 string str = null;
@@ -246,6 +252,10 @@ namespace TestSitemap
 
             try
             {
+                ServicePointManager.Expect100Continue = true;
+                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+                ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
+
                 XmlDocument xDoc = new XmlDocument();
                 xDoc.Load(filename);
                 XmlElement xRoot = xDoc.DocumentElement;

@@ -42,6 +42,12 @@
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button6 = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.textBox5 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -73,17 +79,12 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.button6 = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -93,7 +94,6 @@
             this.splitContainer1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -241,6 +241,74 @@
             this.textBox1.Size = new System.Drawing.Size(511, 20);
             this.textBox1.TabIndex = 1;
             this.textBox1.Text = "C:\\sitemap.xml";
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.button6);
+            this.tabPage3.Controls.Add(this.label9);
+            this.tabPage3.Controls.Add(this.button7);
+            this.tabPage3.Controls.Add(this.button8);
+            this.tabPage3.Controls.Add(this.textBox5);
+            this.tabPage3.Location = new System.Drawing.Point(4, 25);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(776, 71);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Файл TXT";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button6.Location = new System.Drawing.Point(669, 37);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(101, 23);
+            this.button6.TabIndex = 10;
+            this.button6.Text = "Остановить тест";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(6, 14);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(141, 13);
+            this.label9.TabIndex = 6;
+            this.label9.Text = "Путь к файлу с ссылками:";
+            // 
+            // button7
+            // 
+            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button7.Location = new System.Drawing.Point(562, 37);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(101, 23);
+            this.button7.TabIndex = 8;
+            this.button7.Text = "Запустить тест";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button8
+            // 
+            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.button8.Location = new System.Drawing.Point(669, 9);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(101, 23);
+            this.button8.TabIndex = 9;
+            this.button8.Text = "Открыть файл";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // textBox5
+            // 
+            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox5.Enabled = false;
+            this.textBox5.Location = new System.Drawing.Point(153, 11);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(510, 20);
+            this.textBox5.TabIndex = 7;
+            this.textBox5.Text = "C:\\linklist.txt";
             // 
             // panel2
             // 
@@ -529,74 +597,6 @@
             // 
             this.saveFileDialog1.Filter = "*.txt|*.txt|*.*|*.*";
             // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.button6);
-            this.tabPage3.Controls.Add(this.label9);
-            this.tabPage3.Controls.Add(this.button7);
-            this.tabPage3.Controls.Add(this.button8);
-            this.tabPage3.Controls.Add(this.textBox5);
-            this.tabPage3.Location = new System.Drawing.Point(4, 25);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(776, 71);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Файл TXT";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button6.Location = new System.Drawing.Point(669, 37);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(101, 23);
-            this.button6.TabIndex = 10;
-            this.button6.Text = "Остановить тест";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 14);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(141, 13);
-            this.label9.TabIndex = 6;
-            this.label9.Text = "Путь к файлу с ссылками:";
-            // 
-            // button7
-            // 
-            this.button7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button7.Location = new System.Drawing.Point(562, 37);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(101, 23);
-            this.button7.TabIndex = 8;
-            this.button7.Text = "Запустить тест";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // button8
-            // 
-            this.button8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button8.Location = new System.Drawing.Point(669, 9);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(101, 23);
-            this.button8.TabIndex = 9;
-            this.button8.Text = "Открыть файл";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // textBox5
-            // 
-            this.textBox5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox5.Enabled = false;
-            this.textBox5.Location = new System.Drawing.Point(153, 11);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(510, 20);
-            this.textBox5.TabIndex = 7;
-            this.textBox5.Text = "C:\\linklist.txt";
-            // 
             // openFileDialog2
             // 
             this.openFileDialog2.Filter = "*.txt|*.txt|*.*|*.*";
@@ -613,7 +613,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "TestSitemap v 1.02";
+            this.Text = "TestSitemap v 1.03";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
@@ -622,6 +622,8 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -635,8 +637,6 @@
             this.splitContainer1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
