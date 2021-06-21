@@ -146,16 +146,16 @@
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(218, 13);
             this.label7.TabIndex = 11;
-            this.label7.Text = "Дата последнего обновления: 15.06.2021";
+            this.label7.Text = "Дата последнего обновления: 21.06.2021";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(12, 88);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(71, 13);
+            this.label6.Size = new System.Drawing.Size(65, 13);
             this.label6.TabIndex = 10;
-            this.label6.Text = "Версия: 1.03";
+            this.label6.Text = "Версия: 1.1";
             // 
             // linkLabel1
             // 

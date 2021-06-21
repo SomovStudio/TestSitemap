@@ -80,6 +80,12 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -130,6 +136,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.textBox6);
+            this.tabPage1.Controls.Add(this.checkBox1);
             this.tabPage1.Controls.Add(this.button4);
             this.tabPage1.Controls.Add(this.button3);
             this.tabPage1.Controls.Add(this.textBox4);
@@ -145,7 +153,7 @@
             // button4
             // 
             this.button4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button4.Location = new System.Drawing.Point(664, 37);
+            this.button4.Location = new System.Drawing.Point(669, 37);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(101, 23);
             this.button4.TabIndex = 4;
@@ -156,7 +164,7 @@
             // button3
             // 
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.button3.Location = new System.Drawing.Point(557, 37);
+            this.button3.Location = new System.Drawing.Point(562, 37);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(101, 23);
             this.button3.TabIndex = 3;
@@ -185,6 +193,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.textBox7);
+            this.tabPage2.Controls.Add(this.checkBox2);
             this.tabPage2.Controls.Add(this.button5);
             this.tabPage2.Controls.Add(this.label1);
             this.tabPage2.Controls.Add(this.button1);
@@ -244,6 +254,8 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.textBox8);
+            this.tabPage3.Controls.Add(this.checkBox3);
             this.tabPage3.Controls.Add(this.button6);
             this.tabPage3.Controls.Add(this.label9);
             this.tabPage3.Controls.Add(this.button7);
@@ -601,6 +613,75 @@
             // 
             this.openFileDialog2.Filter = "*.txt|*.txt|*.*|*.*";
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Checked = true;
+            this.checkBox1.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox1.Location = new System.Drawing.Point(9, 40);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(153, 17);
+            this.checkBox1.TabIndex = 5;
+            this.checkBox1.Text = "User-Agent по умолчанию";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // textBox6
+            // 
+            this.textBox6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox6.Enabled = false;
+            this.textBox6.Location = new System.Drawing.Point(168, 38);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(383, 20);
+            this.textBox6.TabIndex = 6;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox7.Enabled = false;
+            this.textBox7.Location = new System.Drawing.Point(168, 38);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(383, 20);
+            this.textBox7.TabIndex = 8;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Checked = true;
+            this.checkBox2.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox2.Location = new System.Drawing.Point(9, 40);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(153, 17);
+            this.checkBox2.TabIndex = 7;
+            this.checkBox2.Text = "User-Agent по умолчанию";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
+            // 
+            // textBox8
+            // 
+            this.textBox8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox8.Enabled = false;
+            this.textBox8.Location = new System.Drawing.Point(168, 38);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(383, 20);
+            this.textBox8.TabIndex = 12;
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Checked = true;
+            this.checkBox3.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBox3.Location = new System.Drawing.Point(9, 40);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(153, 17);
+            this.checkBox3.TabIndex = 11;
+            this.checkBox3.Text = "User-Agent по умолчанию";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -613,7 +694,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "TestSitemap v 1.03";
+            this.Text = "TestSitemap v 1.1";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
@@ -695,6 +776,12 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.OpenFileDialog openFileDialog2;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.CheckBox checkBox3;
     }
 }
 

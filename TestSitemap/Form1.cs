@@ -165,6 +165,7 @@ namespace TestSitemap
                 foreach (String link in listLinks)
                 {
                     client = new HttpClient();
+                    if (checkBox1.Checked == false) client.DefaultRequestHeaders.UserAgent.ParseAdd(textBox6.Text);
                     client.BaseAddress = new Uri(link);
 
                     response = client.GetAsync(link).Result;
@@ -217,6 +218,7 @@ namespace TestSitemap
                 foreach (String link in listLinks)
                 {
                     client = new HttpClient();
+                    if (checkBox2.Checked == false) client.DefaultRequestHeaders.UserAgent.ParseAdd(textBox7.Text);
                     client.BaseAddress = new Uri(link);
 
                     response = client.GetAsync(link).Result;
@@ -377,6 +379,7 @@ namespace TestSitemap
                 foreach (String link in listLinks)
                 {
                     client = new HttpClient();
+                    if (checkBox3.Checked == false) client.DefaultRequestHeaders.UserAgent.ParseAdd(textBox8.Text);
                     client.BaseAddress = new Uri(link.ToString());
 
                     response = client.GetAsync(link.ToString()).Result;
@@ -420,6 +423,24 @@ namespace TestSitemap
             {
                 MessageBox.Show(error.Message);
             }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkBox1.Checked == true) textBox6.Enabled = false;
+            else textBox6.Enabled = true;
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox2.Checked == true) textBox7.Enabled = false;
+            else textBox7.Enabled = true;
+        }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox3.Checked == true) textBox8.Enabled = false;
+            else textBox8.Enabled = true;
         }
     }
 }
