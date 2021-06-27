@@ -258,8 +258,23 @@ namespace TestSitemap
                 ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
                 ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
 
-                XmlDocument xDoc = new XmlDocument();
-                xDoc.Load(filename);
+                XmlDocument xDoc;
+                if (checkBox1.Checked == true)
+                {
+                    xDoc = new XmlDocument();
+                    xDoc.Load(filename);
+                }
+                else
+                {
+                    WebClient client = new WebClient();
+                    client.Headers["User-Agent"] = textBox6.Text;
+                    client.Headers["Accept"] = "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8";
+                    string data = client.DownloadString(filename);
+
+                    xDoc = new XmlDocument();
+                    xDoc.LoadXml(data);
+                }
+                
                 XmlElement xRoot = xDoc.DocumentElement;
                 foreach (XmlNode xnode in xRoot)
                 {
@@ -429,18 +444,24 @@ namespace TestSitemap
         {
             if(checkBox1.Checked == true) textBox6.Enabled = false;
             else textBox6.Enabled = true;
+
+            if (checkBox1.Checked == true) textBox6.Text = "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.202 Safari/535.1";
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox2.Checked == true) textBox7.Enabled = false;
             else textBox7.Enabled = true;
+
+            if (checkBox2.Checked == true) textBox7.Text = "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.202 Safari/535.1";
         }
 
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox3.Checked == true) textBox8.Enabled = false;
             else textBox8.Enabled = true;
+
+            if (checkBox3.Checked == true) textBox8.Text = "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.202 Safari/535.1";
         }
     }
 }
