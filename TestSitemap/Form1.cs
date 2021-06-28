@@ -19,9 +19,35 @@ namespace TestSitemap
 {
     public partial class Form1 : Form
     {
+        private bool processRun = false;
+
+        private void showProgressTest(double totalPages, double onePercent, double step)
+        {
+            toolStripProgressBar1.Maximum = Convert.ToInt32(totalPages);
+            toolStripProgressBar1.Value = Convert.ToInt32(step);
+            double progressPercent = 0;
+            if (totalPages < 100 && onePercent > 0) progressPercent = (step * onePercent);
+            if (totalPages >= 100) progressPercent = (step / onePercent);
+            progressPercent = Math.Round(progressPercent, 0);
+            if(progressPercent < 100) toolStripStatusLabel6.Text = Convert.ToString(progressPercent) + "%";
+            else toolStripStatusLabel6.Text = "99%";
+
+            double n1 = totalPages - step;
+            double n2 = 2;
+            double n3 = 3600;
+            double timeLeft = (n1 * n2) / n3;
+            Console.WriteLine(timeLeft);
+            timeLeft = Math.Round(timeLeft, 2);
+            //toolStripStatusLabel8.Text = "Осталось: " + timeLeft.ToString().Replace(",", " час ") + " минут";
+            string testLeftTime = timeLeft.ToString().Replace(",", ":");
+            if (testLeftTime.Length < 4) testLeftTime = testLeftTime + "0";
+            toolStripStatusLabel8.Text = "Осталось: " + testLeftTime;
+        }
+
         public Form1()
         {
             InitializeComponent();
+            CheckForIllegalCrossThreadCalls = false;
         }
 
         private void Form1_FormClosed(object sender, FormClosedEventArgs e)
@@ -48,10 +74,20 @@ namespace TestSitemap
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if (processRun == true)
+            {
+                MessageBox.Show("Процесс уже запущен");
+                return;
+            }
+
             textBox2.Text = "";
             textBox3.Text = "";
             toolStripStatusLabel2.Text = DateTime.Now.ToString();
             toolStripStatusLabel4.Text = "0:00";
+            toolStripProgressBar1.Value = 0;
+            toolStripProgressBar1.Maximum = 0;
+            toolStripStatusLabel6.Text = "0%";
+            toolStripStatusLabel8.Text = "0:00";
 
             CheckLocal();
         }
@@ -123,10 +159,20 @@ namespace TestSitemap
 
         private void button3_Click(object sender, EventArgs e)
         {
+            if(processRun == true)
+            {
+                MessageBox.Show("Процесс уже запущен");
+                return;
+            }
+            
             textBox2.Text = "";
             textBox3.Text = "";
             toolStripStatusLabel2.Text = DateTime.Now.ToString();
             toolStripStatusLabel4.Text = "0:00";
+            toolStripProgressBar1.Value = 0;
+            toolStripProgressBar1.Maximum = 0;
+            toolStripStatusLabel6.Text = "0%";
+            toolStripStatusLabel8.Text = "0:00";
 
             CheckURL();
         }
@@ -154,11 +200,17 @@ namespace TestSitemap
 
         private void TestUrl()
         {
+            processRun = true;
             try
             {
                 ArrayList listLinks = readUrlXML(textBox4.Text);
                 int count = listLinks.Count;
                 int index = 1;
+                double totalPages = count;
+                double onePercent = 0;
+                if (totalPages < 100) onePercent = (100 / totalPages);
+                else onePercent = (totalPages / 100);
+
                 String process = "";
                 HttpClient client;
                 HttpResponseMessage response;
@@ -172,15 +224,22 @@ namespace TestSitemap
                     int statusCode = (int)response.StatusCode;
                     if (statusCode != 200)
                     {
-                        Action action3 = () => textBox3.Text = textBox3.Text + link + " STATUS: " + statusCode.ToString() + Environment.NewLine;
-                        textBox3.Invoke(action3);
+                        //Action action3 = () => textBox3.Text = textBox3.Text + link + " STATUS: " + statusCode.ToString() + Environment.NewLine;
+                        //textBox3.Invoke(action3);
+                        textBox3.Text = textBox3.Text + link + " STATUS: " + statusCode.ToString() + Environment.NewLine;
                     }
 
                     process = textBox2.Text;
-                    Action action2 = () => textBox2.Text = "[" + index.ToString() + " / " + count.ToString() + "] " + link + " STATUS: " + statusCode.ToString() + Environment.NewLine + process;
-                    textBox2.Invoke(action2);
+                    //Action action2 = () => textBox2.Text = "[" + index.ToString() + " / " + count.ToString() + "] " + link + " STATUS: " + statusCode.ToString() + Environment.NewLine + process;
+                    //textBox2.Invoke(action2);
+                    textBox2.Text = "[" + index.ToString() + " / " + count.ToString() + "] " + link + " STATUS: " + statusCode.ToString() + Environment.NewLine + process;
+
+                    showProgressTest(totalPages, onePercent, index);
                     index++;
                 }
+
+                toolStripStatusLabel6.Text = "100%";
+                toolStripStatusLabel8.Text = "0:00";
             }
             catch (Exception error)
             {
@@ -207,6 +266,7 @@ namespace TestSitemap
 
         private void TestLocal()
         {
+            processRun = true;
             try
             {
                 ArrayList listLinks = readXML(textBox1.Text);
@@ -301,6 +361,7 @@ namespace TestSitemap
         {
             toolStripStatusLabel4.Text = DateTime.Now.ToString();
             MessageBox.Show("Процесс проверки - завершен!");
+            processRun = false;
         }
 
         private void сохранитьСписокПроверкиToolStripMenuItem_Click(object sender, EventArgs e)
@@ -357,10 +418,20 @@ namespace TestSitemap
 
         private void button7_Click(object sender, EventArgs e)
         {
+            if (processRun == true)
+            {
+                MessageBox.Show("Процесс уже запущен");
+                return;
+            }
+
             textBox2.Text = "";
             textBox3.Text = "";
             toolStripStatusLabel2.Text = DateTime.Now.ToString();
             toolStripStatusLabel4.Text = "0:00";
+            toolStripProgressBar1.Value = 0;
+            toolStripProgressBar1.Maximum = 0;
+            toolStripStatusLabel6.Text = "0%";
+            toolStripStatusLabel8.Text = "0:00";
 
             CheckLocal2();
         }
@@ -373,6 +444,7 @@ namespace TestSitemap
 
         private void TestLocal2()
         {
+            processRun = true;
             try
             {
                 ArrayList listLinks = new ArrayList();
@@ -462,6 +534,18 @@ namespace TestSitemap
             else textBox8.Enabled = true;
 
             if (checkBox3.Checked == true) textBox8.Text = "Mozilla/5.0 (Windows NT 6.1) AppleWebKit/535.1 (KHTML, like Gecko) Chrome/14.0.835.202 Safari/535.1";
+        }
+
+        private void валидаторXMLSitemapToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(@"https://www.mysitemapgenerator.com/ru/service/check.html");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Ошибка");
+            }
         }
     }
 }

@@ -74,6 +74,11 @@
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
+            this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel7 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel8 = new System.Windows.Forms.ToolStripStatusLabel();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
@@ -86,11 +91,7 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
-            this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripProgressBar1 = new System.Windows.Forms.ToolStripProgressBar();
-            this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel7 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.toolStripStatusLabel8 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.валидаторXMLSitemapToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -460,6 +461,7 @@
             // 
             // сохранитьСписокПроверкиToolStripMenuItem
             // 
+            this.сохранитьСписокПроверкиToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("сохранитьСписокПроверкиToolStripMenuItem.Image")));
             this.сохранитьСписокПроверкиToolStripMenuItem.Name = "сохранитьСписокПроверкиToolStripMenuItem";
             this.сохранитьСписокПроверкиToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
             this.сохранитьСписокПроверкиToolStripMenuItem.Text = "Сохранить список проверки";
@@ -467,6 +469,7 @@
             // 
             // сохранитьСписокОшибокToolStripMenuItem
             // 
+            this.сохранитьСписокОшибокToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("сохранитьСписокОшибокToolStripMenuItem.Image")));
             this.сохранитьСписокОшибокToolStripMenuItem.Name = "сохранитьСписокОшибокToolStripMenuItem";
             this.сохранитьСписокОшибокToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
             this.сохранитьСписокОшибокToolStripMenuItem.Text = "Сохранить список ошибок";
@@ -479,6 +482,7 @@
             // 
             // закрытьToolStripMenuItem
             // 
+            this.закрытьToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("закрытьToolStripMenuItem.Image")));
             this.закрытьToolStripMenuItem.Name = "закрытьToolStripMenuItem";
             this.закрытьToolStripMenuItem.Size = new System.Drawing.Size(231, 22);
             this.закрытьToolStripMenuItem.Text = "Закрыть";
@@ -487,7 +491,8 @@
             // сервисToolStripMenuItem
             // 
             this.сервисToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.валидаторXMLSitemapToolStripMenuItem});
+            this.валидаторXMLSitemapToolStripMenuItem,
+            this.валидаторXMLSitemapToolStripMenuItem1});
             this.сервисToolStripMenuItem.Name = "сервисToolStripMenuItem";
             this.сервисToolStripMenuItem.Size = new System.Drawing.Size(59, 20);
             this.сервисToolStripMenuItem.Text = "Сервис";
@@ -495,8 +500,8 @@
             // валидаторXMLSitemapToolStripMenuItem
             // 
             this.валидаторXMLSitemapToolStripMenuItem.Name = "валидаторXMLSitemapToolStripMenuItem";
-            this.валидаторXMLSitemapToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
-            this.валидаторXMLSitemapToolStripMenuItem.Text = "Валидатор XML Sitemap";
+            this.валидаторXMLSitemapToolStripMenuItem.Size = new System.Drawing.Size(383, 22);
+            this.валидаторXMLSitemapToolStripMenuItem.Text = "Валидатор XML Sitemap (www.xml-sitemaps.com)";
             this.валидаторXMLSitemapToolStripMenuItem.Click += new System.EventHandler(this.валидаторXMLSitemapToolStripMenuItem_Click);
             // 
             // настройкиToolStripMenuItem
@@ -524,8 +529,9 @@
             // 
             // оПрограммеToolStripMenuItem
             // 
+            this.оПрограммеToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("оПрограммеToolStripMenuItem.Image")));
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
             // 
@@ -570,6 +576,35 @@
             this.toolStripStatusLabel4.Name = "toolStripStatusLabel4";
             this.toolStripStatusLabel4.Size = new System.Drawing.Size(28, 17);
             this.toolStripStatusLabel4.Text = "0:00";
+            // 
+            // toolStripStatusLabel5
+            // 
+            this.toolStripStatusLabel5.Name = "toolStripStatusLabel5";
+            this.toolStripStatusLabel5.Size = new System.Drawing.Size(10, 17);
+            this.toolStripStatusLabel5.Text = "|";
+            // 
+            // toolStripProgressBar1
+            // 
+            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
+            this.toolStripProgressBar1.Size = new System.Drawing.Size(150, 16);
+            // 
+            // toolStripStatusLabel6
+            // 
+            this.toolStripStatusLabel6.Name = "toolStripStatusLabel6";
+            this.toolStripStatusLabel6.Size = new System.Drawing.Size(23, 17);
+            this.toolStripStatusLabel6.Text = "0%";
+            // 
+            // toolStripStatusLabel7
+            // 
+            this.toolStripStatusLabel7.Name = "toolStripStatusLabel7";
+            this.toolStripStatusLabel7.Size = new System.Drawing.Size(10, 17);
+            this.toolStripStatusLabel7.Text = "|";
+            // 
+            // toolStripStatusLabel8
+            // 
+            this.toolStripStatusLabel8.Name = "toolStripStatusLabel8";
+            this.toolStripStatusLabel8.Size = new System.Drawing.Size(28, 17);
+            this.toolStripStatusLabel8.Text = "0:00";
             // 
             // splitContainer1
             // 
@@ -698,34 +733,12 @@
             // 
             this.openFileDialog2.Filter = "*.txt|*.txt|*.*|*.*";
             // 
-            // toolStripStatusLabel5
+            // валидаторXMLSitemapToolStripMenuItem1
             // 
-            this.toolStripStatusLabel5.Name = "toolStripStatusLabel5";
-            this.toolStripStatusLabel5.Size = new System.Drawing.Size(10, 17);
-            this.toolStripStatusLabel5.Text = "|";
-            // 
-            // toolStripProgressBar1
-            // 
-            this.toolStripProgressBar1.Name = "toolStripProgressBar1";
-            this.toolStripProgressBar1.Size = new System.Drawing.Size(250, 16);
-            // 
-            // toolStripStatusLabel6
-            // 
-            this.toolStripStatusLabel6.Name = "toolStripStatusLabel6";
-            this.toolStripStatusLabel6.Size = new System.Drawing.Size(23, 17);
-            this.toolStripStatusLabel6.Text = "0%";
-            // 
-            // toolStripStatusLabel7
-            // 
-            this.toolStripStatusLabel7.Name = "toolStripStatusLabel7";
-            this.toolStripStatusLabel7.Size = new System.Drawing.Size(10, 17);
-            this.toolStripStatusLabel7.Text = "|";
-            // 
-            // toolStripStatusLabel8
-            // 
-            this.toolStripStatusLabel8.Name = "toolStripStatusLabel8";
-            this.toolStripStatusLabel8.Size = new System.Drawing.Size(28, 17);
-            this.toolStripStatusLabel8.Text = "0:00";
+            this.валидаторXMLSitemapToolStripMenuItem1.Name = "валидаторXMLSitemapToolStripMenuItem1";
+            this.валидаторXMLSitemapToolStripMenuItem1.Size = new System.Drawing.Size(383, 22);
+            this.валидаторXMLSitemapToolStripMenuItem1.Text = "Валидатор XML Sitemap (www.mysitemapgenerator.com)";
+            this.валидаторXMLSitemapToolStripMenuItem1.Click += new System.EventHandler(this.валидаторXMLSitemapToolStripMenuItem1_Click);
             // 
             // Form1
             // 
@@ -832,6 +845,7 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel6;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel7;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel8;
+        private System.Windows.Forms.ToolStripMenuItem валидаторXMLSitemapToolStripMenuItem1;
     }
 }
 
