@@ -36,12 +36,13 @@ namespace TestSitemap
             double n2 = 2;
             double n3 = 3600;
             double timeLeft = (n1 * n2) / n3;
-            Console.WriteLine(timeLeft);
+            //Console.WriteLine(timeLeft);
             timeLeft = Math.Round(timeLeft, 2);
-            //toolStripStatusLabel8.Text = "Осталось: " + timeLeft.ToString().Replace(",", " час ") + " минут";
-            string testLeftTime = timeLeft.ToString().Replace(",", ":");
-            if (testLeftTime.Length < 4) testLeftTime = testLeftTime + "0";
-            toolStripStatusLabel8.Text = "Осталось: " + testLeftTime;
+            if (timeLeft > 1.5) timeLeft = (timeLeft - 0.6) + 1;
+
+            string textLeftTime = timeLeft.ToString().Replace(",", ":");
+            if (textLeftTime.Length < 4) textLeftTime = textLeftTime + "0";
+            toolStripStatusLabel8.Text = "Осталось: " + textLeftTime.ToString().Replace(":", " час ") + " минут";
         }
 
         public Form1()
@@ -272,6 +273,11 @@ namespace TestSitemap
                 ArrayList listLinks = readXML(textBox1.Text);
                 int count = listLinks.Count;
                 int index = 1;
+                double totalPages = count;
+                double onePercent = 0;
+                if (totalPages < 100) onePercent = (100 / totalPages);
+                else onePercent = (totalPages / 100);
+
                 String process = "";
                 HttpClient client;
                 HttpResponseMessage response;
@@ -285,15 +291,22 @@ namespace TestSitemap
                     int statusCode = (int)response.StatusCode;
                     if (statusCode != 200)
                     {
-                        Action action3 = () => textBox3.Text = textBox3.Text + link + " STATUS: " + statusCode.ToString() + Environment.NewLine;
-                        textBox3.Invoke(action3);
+                        //Action action3 = () => textBox3.Text = textBox3.Text + link + " STATUS: " + statusCode.ToString() + Environment.NewLine;
+                        //textBox3.Invoke(action3);
+                        textBox3.Text = textBox3.Text + link + " STATUS: " + statusCode.ToString() + Environment.NewLine;
                     }
 
                     process = textBox2.Text;
-                    Action action2 = () => textBox2.Text = "[" + index.ToString() + " / " + count.ToString() + "] " + link + " STATUS: " + statusCode.ToString() + Environment.NewLine + process;
-                    textBox2.Invoke(action2);
+                    //Action action2 = () => textBox2.Text = "[" + index.ToString() + " / " + count.ToString() + "] " + link + " STATUS: " + statusCode.ToString() + Environment.NewLine + process;
+                    //textBox2.Invoke(action2);
+                    textBox2.Text = "[" + index.ToString() + " / " + count.ToString() + "] " + link + " STATUS: " + statusCode.ToString() + Environment.NewLine + process;
+
+                    showProgressTest(totalPages, onePercent, index);
                     index++;
                 }
+
+                toolStripStatusLabel6.Text = "100%";
+                toolStripStatusLabel8.Text = "0:00";
             }
             catch (Exception error)
             {
@@ -460,6 +473,11 @@ namespace TestSitemap
 
                 int count = listLinks.Count;
                 int index = 1;
+                double totalPages = count;
+                double onePercent = 0;
+                if (totalPages < 100) onePercent = (100 / totalPages);
+                else onePercent = (totalPages / 100);
+
                 String process = "";
                 HttpClient client;
                 HttpResponseMessage response;
@@ -473,15 +491,22 @@ namespace TestSitemap
                     int statusCode = (int)response.StatusCode;
                     if (statusCode != 200)
                     {
-                        Action action3 = () => textBox3.Text = textBox3.Text + link.ToString() + " STATUS: " + statusCode.ToString() + Environment.NewLine;
-                        textBox3.Invoke(action3);
+                        //Action action3 = () => textBox3.Text = textBox3.Text + link.ToString() + " STATUS: " + statusCode.ToString() + Environment.NewLine;
+                        //textBox3.Invoke(action3);
+                        textBox3.Text = textBox3.Text + link.ToString() + " STATUS: " + statusCode.ToString() + Environment.NewLine;
                     }
 
                     process = textBox2.Text;
-                    Action action2 = () => textBox2.Text = "[" + index.ToString() + " / " + count.ToString() + "] " + link.ToString() + " STATUS: " + statusCode.ToString() + Environment.NewLine + process;
-                    textBox2.Invoke(action2);
+                    //Action action2 = () => textBox2.Text = "[" + index.ToString() + " / " + count.ToString() + "] " + link.ToString() + " STATUS: " + statusCode.ToString() + Environment.NewLine + process;
+                    //textBox2.Invoke(action2);
+                    textBox2.Text = "[" + index.ToString() + " / " + count.ToString() + "] " + link.ToString() + " STATUS: " + statusCode.ToString() + Environment.NewLine + process;
+
+                    showProgressTest(totalPages, onePercent, index);
                     index++;
                 }
+
+                toolStripStatusLabel6.Text = "100%";
+                toolStripStatusLabel8.Text = "0:00";
             }
             catch (Exception error)
             {
