@@ -215,9 +215,11 @@ namespace TestSitemap
                 String process = "";
                 HttpClient client;
                 HttpResponseMessage response;
+                HttpClientHandler handler = new HttpClientHandler();
+                handler.AllowAutoRedirect = false;
                 foreach (String link in listLinks)
                 {
-                    client = new HttpClient();
+                    client = new HttpClient(handler);
                     if (checkBox1.Checked == false) client.DefaultRequestHeaders.UserAgent.ParseAdd(textBox6.Text);
                     client.BaseAddress = new Uri(link);
 
@@ -281,9 +283,11 @@ namespace TestSitemap
                 String process = "";
                 HttpClient client;
                 HttpResponseMessage response;
+                HttpClientHandler handler = new HttpClientHandler();
+                handler.AllowAutoRedirect = false;
                 foreach (String link in listLinks)
                 {
-                    client = new HttpClient();
+                    client = new HttpClient(handler);
                     if (checkBox2.Checked == false) client.DefaultRequestHeaders.UserAgent.ParseAdd(textBox7.Text);
                     client.BaseAddress = new Uri(link);
 
@@ -481,9 +485,11 @@ namespace TestSitemap
                 String process = "";
                 HttpClient client;
                 HttpResponseMessage response;
+                HttpClientHandler handler = new HttpClientHandler();
+                handler.AllowAutoRedirect = false;
                 foreach (String link in listLinks)
                 {
-                    client = new HttpClient();
+                    client = new HttpClient(handler);
                     if (checkBox3.Checked == false) client.DefaultRequestHeaders.UserAgent.ParseAdd(textBox8.Text);
                     client.BaseAddress = new Uri(link.ToString());
 

@@ -65,6 +65,7 @@
             this.закрытьToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.сервисToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.валидаторXMLSitemapToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.валидаторXMLSitemapToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.подробноеОписаниеОшибокToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -91,7 +92,6 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
-            this.валидаторXMLSitemapToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -504,6 +504,13 @@
             this.валидаторXMLSitemapToolStripMenuItem.Text = "Валидатор XML Sitemap (www.xml-sitemaps.com)";
             this.валидаторXMLSitemapToolStripMenuItem.Click += new System.EventHandler(this.валидаторXMLSitemapToolStripMenuItem_Click);
             // 
+            // валидаторXMLSitemapToolStripMenuItem1
+            // 
+            this.валидаторXMLSitemapToolStripMenuItem1.Name = "валидаторXMLSitemapToolStripMenuItem1";
+            this.валидаторXMLSitemapToolStripMenuItem1.Size = new System.Drawing.Size(383, 22);
+            this.валидаторXMLSitemapToolStripMenuItem1.Text = "Валидатор XML Sitemap (www.mysitemapgenerator.com)";
+            this.валидаторXMLSitemapToolStripMenuItem1.Click += new System.EventHandler(this.валидаторXMLSitemapToolStripMenuItem1_Click);
+            // 
             // настройкиToolStripMenuItem
             // 
             this.настройкиToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -531,7 +538,7 @@
             // 
             this.оПрограммеToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("оПрограммеToolStripMenuItem.Image")));
             this.оПрограммеToolStripMenuItem.Name = "оПрограммеToolStripMenuItem";
-            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.оПрограммеToolStripMenuItem.Size = new System.Drawing.Size(149, 22);
             this.оПрограммеToolStripMenuItem.Text = "О программе";
             this.оПрограммеToolStripMenuItem.Click += new System.EventHandler(this.оПрограммеToolStripMenuItem_Click);
             // 
@@ -733,13 +740,6 @@
             // 
             this.openFileDialog2.Filter = "*.txt|*.txt|*.*|*.*";
             // 
-            // валидаторXMLSitemapToolStripMenuItem1
-            // 
-            this.валидаторXMLSitemapToolStripMenuItem1.Name = "валидаторXMLSitemapToolStripMenuItem1";
-            this.валидаторXMLSitemapToolStripMenuItem1.Size = new System.Drawing.Size(383, 22);
-            this.валидаторXMLSitemapToolStripMenuItem1.Text = "Валидатор XML Sitemap (www.mysitemapgenerator.com)";
-            this.валидаторXMLSitemapToolStripMenuItem1.Click += new System.EventHandler(this.валидаторXMLSitemapToolStripMenuItem1_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -752,7 +752,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "TestSitemap v 1.1";
+            this.Text = "TestSitemap v 1.2";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
