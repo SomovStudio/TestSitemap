@@ -229,7 +229,17 @@ namespace TestSitemap
                     {
                         //Action action3 = () => textBox3.Text = textBox3.Text + link + " STATUS: " + statusCode.ToString() + Environment.NewLine;
                         //textBox3.Invoke(action3);
-                        textBox3.Text = textBox3.Text + link + " STATUS: " + statusCode.ToString() + Environment.NewLine;
+                        if (всеОтветыКоторыеНе200ToolStripMenuItem.Checked == false)
+                        {
+                            if (statusCode >= 300 && statusCode <= 399 && учитывать300еОтветыКакОшибкиToolStripMenuItem.Checked == true) textBox3.Text = textBox3.Text + link + " STATUS: " + statusCode.ToString() + Environment.NewLine;
+                            if (statusCode >= 400 && statusCode <= 499 && учитывать400еОтветыКакОшибкиToolStripMenuItem.Checked == true) textBox3.Text = textBox3.Text + link + " STATUS: " + statusCode.ToString() + Environment.NewLine;
+                            if (statusCode >= 500 && statusCode <= 599 && учитывать500еОтветыКакОшибкиToolStripMenuItem.Checked == true) textBox3.Text = textBox3.Text + link + " STATUS: " + statusCode.ToString() + Environment.NewLine;
+                            if (statusCode >= 600) textBox3.Text = textBox3.Text + link + " STATUS: " + statusCode.ToString() + Environment.NewLine;
+                        }
+                        else
+                        {
+                            textBox3.Text = textBox3.Text + link.ToString() + " STATUS: " + statusCode.ToString() + Environment.NewLine;
+                        }
                     }
 
                     process = textBox2.Text;
@@ -297,7 +307,17 @@ namespace TestSitemap
                     {
                         //Action action3 = () => textBox3.Text = textBox3.Text + link + " STATUS: " + statusCode.ToString() + Environment.NewLine;
                         //textBox3.Invoke(action3);
-                        textBox3.Text = textBox3.Text + link + " STATUS: " + statusCode.ToString() + Environment.NewLine;
+                        if (всеОтветыКоторыеНе200ToolStripMenuItem.Checked == false)
+                        {
+                            if (statusCode >= 300 && statusCode <= 399 && учитывать300еОтветыКакОшибкиToolStripMenuItem.Checked == true) textBox3.Text = textBox3.Text + link + " STATUS: " + statusCode.ToString() + Environment.NewLine;
+                            if (statusCode >= 400 && statusCode <= 499 && учитывать400еОтветыКакОшибкиToolStripMenuItem.Checked == true) textBox3.Text = textBox3.Text + link + " STATUS: " + statusCode.ToString() + Environment.NewLine;
+                            if (statusCode >= 500 && statusCode <= 599 && учитывать500еОтветыКакОшибкиToolStripMenuItem.Checked == true) textBox3.Text = textBox3.Text + link + " STATUS: " + statusCode.ToString() + Environment.NewLine;
+                            if (statusCode >= 600) textBox3.Text = textBox3.Text + link + " STATUS: " + statusCode.ToString() + Environment.NewLine;
+                        }
+                        else
+                        {
+                            textBox3.Text = textBox3.Text + link.ToString() + " STATUS: " + statusCode.ToString() + Environment.NewLine;
+                        }
                     }
 
                     process = textBox2.Text;
@@ -499,7 +519,18 @@ namespace TestSitemap
                     {
                         //Action action3 = () => textBox3.Text = textBox3.Text + link.ToString() + " STATUS: " + statusCode.ToString() + Environment.NewLine;
                         //textBox3.Invoke(action3);
-                        textBox3.Text = textBox3.Text + link.ToString() + " STATUS: " + statusCode.ToString() + Environment.NewLine;
+                        if (всеОтветыКоторыеНе200ToolStripMenuItem.Checked == false)
+                        {
+                            if (statusCode >= 300 && statusCode <= 399 && учитывать300еОтветыКакОшибкиToolStripMenuItem.Checked == true) textBox3.Text = textBox3.Text + link + " STATUS: " + statusCode.ToString() + Environment.NewLine;
+                            if (statusCode >= 400 && statusCode <= 499 && учитывать400еОтветыКакОшибкиToolStripMenuItem.Checked == true) textBox3.Text = textBox3.Text + link + " STATUS: " + statusCode.ToString() + Environment.NewLine;
+                            if (statusCode >= 500 && statusCode <= 599 && учитывать500еОтветыКакОшибкиToolStripMenuItem.Checked == true) textBox3.Text = textBox3.Text + link + " STATUS: " + statusCode.ToString() + Environment.NewLine;
+                            if (statusCode >= 600) textBox3.Text = textBox3.Text + link + " STATUS: " + statusCode.ToString() + Environment.NewLine;
+                        }
+                        else
+                        {
+                            textBox3.Text = textBox3.Text + link.ToString() + " STATUS: " + statusCode.ToString() + Environment.NewLine;
+                        }
+                        
                     }
 
                     process = textBox2.Text;
@@ -576,6 +607,42 @@ namespace TestSitemap
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Ошибка");
+            }
+        }
+
+        private void учитывать300еОтветыКакОшибкиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (учитывать300еОтветыКакОшибкиToolStripMenuItem.Checked) учитывать300еОтветыКакОшибкиToolStripMenuItem.Checked = false;
+            else учитывать300еОтветыКакОшибкиToolStripMenuItem.Checked = true;
+            всеОтветыКоторыеНе200ToolStripMenuItem.Checked = false;
+        }
+
+        private void учитывать400еОтветыКакОшибкиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (учитывать400еОтветыКакОшибкиToolStripMenuItem.Checked) учитывать400еОтветыКакОшибкиToolStripMenuItem.Checked = false;
+            else учитывать400еОтветыКакОшибкиToolStripMenuItem.Checked = true;
+            всеОтветыКоторыеНе200ToolStripMenuItem.Checked = false;
+        }
+
+        private void учитывать500еОтветыКакОшибкиToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (учитывать500еОтветыКакОшибкиToolStripMenuItem.Checked) учитывать500еОтветыКакОшибкиToolStripMenuItem.Checked = false;
+            else учитывать500еОтветыКакОшибкиToolStripMenuItem.Checked = true;
+            всеОтветыКоторыеНе200ToolStripMenuItem.Checked = false;
+        }
+
+        private void всеОтветыКоторыеНе200ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (всеОтветыКоторыеНе200ToolStripMenuItem.Checked)
+            {
+                всеОтветыКоторыеНе200ToolStripMenuItem.Checked = false;
+            }
+            else
+            {
+                всеОтветыКоторыеНе200ToolStripMenuItem.Checked = true;
+                учитывать300еОтветыКакОшибкиToolStripMenuItem.Checked = false;
+                учитывать400еОтветыКакОшибкиToolStripMenuItem.Checked = false;
+                учитывать500еОтветыКакОшибкиToolStripMenuItem.Checked = false;
             }
         }
     }
