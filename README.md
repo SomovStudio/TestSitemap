@@ -3,7 +3,7 @@
 <br>
 Программа циклично проходит по всем ссылкам и получает статус страницы. Если статус не равен 200 (успешно) данная ссылка попадет в список ошибок.
 <br>
-Скачать архив: https://github.com/SomovStudio/TestSitemap/archive/refs/tags/1.1.zip
+Скачать архив: https://github.com/SomovStudio/TestSitemap/archive/refs/tags/1.2.zip
 
 <hr>
 
