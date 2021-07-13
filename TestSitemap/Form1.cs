@@ -32,17 +32,15 @@ namespace TestSitemap
             if(progressPercent < 100) toolStripStatusLabel6.Text = Convert.ToString(progressPercent) + "%";
             else toolStripStatusLabel6.Text = "99%";
 
-            double n1 = totalPages - step;
-            double n2 = 2;
-            double n3 = 3600;
-            double timeLeft = (n1 * n2) / n3;
-            //Console.WriteLine(timeLeft);
-            timeLeft = Math.Round(timeLeft, 2);
-            if (timeLeft > 1.5) timeLeft = (timeLeft - 0.6) + 1;
+            double dSec = (totalPages - step) * 1;
 
-            string textLeftTime = timeLeft.ToString().Replace(",", ":");
-            if (textLeftTime.Length < 4) textLeftTime = textLeftTime + "0";
-            toolStripStatusLabel8.Text = "Осталось: " + textLeftTime.ToString().Replace(":", " час ") + " минут";
+            int sec = Convert.ToInt32(dSec);
+            int minutes = sec / 60;
+            int newSec = sec - minutes * 60;
+            int hour = minutes / 60;
+            int newMinnutes = minutes - hour * 60;
+            TimeSpan time = new TimeSpan(hour, newMinnutes, newSec);
+            toolStripStatusLabel8.Text = "Осталось: " + time.ToString();
         }
 
         public Form1()
