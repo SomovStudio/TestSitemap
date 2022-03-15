@@ -123,6 +123,8 @@ namespace TestSitemap
                 FileStream fs = new FileStream(@filename, FileMode.Open, FileAccess.Read);
                 xmldoc.Load(fs);
                 xmlnode = xmldoc.GetElementsByTagName("url");
+                if(xmlnode.Count <= 0) xmlnode = xmldoc.GetElementsByTagName("sitemap");
+
                 for (i = 0; i <= xmlnode.Count - 1; i++)
                 {
                     for(int j = 0; j <= xmlnode[i].ChildNodes.Count; j++)
@@ -277,6 +279,10 @@ namespace TestSitemap
 
         private void TestLocal()
         {
+            ServicePointManager.Expect100Continue = true;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+            ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
+
             processRun = true;
             try
             {
@@ -479,6 +485,10 @@ namespace TestSitemap
 
         private void TestLocal2()
         {
+            ServicePointManager.Expect100Continue = true;
+            ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12;
+            ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
+
             processRun = true;
             try
             {

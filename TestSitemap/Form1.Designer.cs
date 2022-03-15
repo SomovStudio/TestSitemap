@@ -68,6 +68,12 @@
             this.валидаторXMLSitemapToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.настройкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.подробноеОписаниеОшибокToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.учитывать300еОтветыКакОшибкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.учитывать400еОтветыКакОшибкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.учитывать500еОтветыКакОшибкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.всеОтветыКоторыеНе200ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.справкаToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -92,12 +98,6 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
-            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.учитывать300еОтветыКакОшибкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.учитывать400еОтветыКакОшибкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.учитывать500еОтветыКакОшибкиToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
-            this.всеОтветыКоторыеНе200ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -538,6 +538,50 @@
             this.подробноеОписаниеОшибокToolStripMenuItem.Text = "Подробное описание ошибок";
             this.подробноеОписаниеОшибокToolStripMenuItem.Click += new System.EventHandler(this.подробноеОписаниеОшибокToolStripMenuItem_Click);
             // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(271, 6);
+            // 
+            // учитывать300еОтветыКакОшибкиToolStripMenuItem
+            // 
+            this.учитывать300еОтветыКакОшибкиToolStripMenuItem.Checked = true;
+            this.учитывать300еОтветыКакОшибкиToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.учитывать300еОтветыКакОшибкиToolStripMenuItem.Name = "учитывать300еОтветыКакОшибкиToolStripMenuItem";
+            this.учитывать300еОтветыКакОшибкиToolStripMenuItem.Size = new System.Drawing.Size(274, 22);
+            this.учитывать300еОтветыКакОшибкиToolStripMenuItem.Text = "Учитывать 300-е ответы как ошибки";
+            this.учитывать300еОтветыКакОшибкиToolStripMenuItem.Click += new System.EventHandler(this.учитывать300еОтветыКакОшибкиToolStripMenuItem_Click);
+            // 
+            // учитывать400еОтветыКакОшибкиToolStripMenuItem
+            // 
+            this.учитывать400еОтветыКакОшибкиToolStripMenuItem.Checked = true;
+            this.учитывать400еОтветыКакОшибкиToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.учитывать400еОтветыКакОшибкиToolStripMenuItem.Name = "учитывать400еОтветыКакОшибкиToolStripMenuItem";
+            this.учитывать400еОтветыКакОшибкиToolStripMenuItem.Size = new System.Drawing.Size(274, 22);
+            this.учитывать400еОтветыКакОшибкиToolStripMenuItem.Text = "Учитывать 400-е ответы как ошибки";
+            this.учитывать400еОтветыКакОшибкиToolStripMenuItem.Click += new System.EventHandler(this.учитывать400еОтветыКакОшибкиToolStripMenuItem_Click);
+            // 
+            // учитывать500еОтветыКакОшибкиToolStripMenuItem
+            // 
+            this.учитывать500еОтветыКакОшибкиToolStripMenuItem.Checked = true;
+            this.учитывать500еОтветыКакОшибкиToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.учитывать500еОтветыКакОшибкиToolStripMenuItem.Name = "учитывать500еОтветыКакОшибкиToolStripMenuItem";
+            this.учитывать500еОтветыКакОшибкиToolStripMenuItem.Size = new System.Drawing.Size(274, 22);
+            this.учитывать500еОтветыКакОшибкиToolStripMenuItem.Text = "Учитывать 500-е ответы как ошибки";
+            this.учитывать500еОтветыКакОшибкиToolStripMenuItem.Click += new System.EventHandler(this.учитывать500еОтветыКакОшибкиToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(271, 6);
+            // 
+            // всеОтветыКоторыеНе200ToolStripMenuItem
+            // 
+            this.всеОтветыКоторыеНе200ToolStripMenuItem.Name = "всеОтветыКоторыеНе200ToolStripMenuItem";
+            this.всеОтветыКоторыеНе200ToolStripMenuItem.Size = new System.Drawing.Size(274, 22);
+            this.всеОтветыКоторыеНе200ToolStripMenuItem.Text = "Все ответы которые не 200";
+            this.всеОтветыКоторыеНе200ToolStripMenuItem.Click += new System.EventHandler(this.всеОтветыКоторыеНе200ToolStripMenuItem_Click);
+            // 
             // справкаToolStripMenuItem
             // 
             this.справкаToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -752,50 +796,6 @@
             // 
             this.openFileDialog2.Filter = "*.txt|*.txt|*.*|*.*";
             // 
-            // toolStripSeparator2
-            // 
-            this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(271, 6);
-            // 
-            // учитывать300еОтветыКакОшибкиToolStripMenuItem
-            // 
-            this.учитывать300еОтветыКакОшибкиToolStripMenuItem.Checked = true;
-            this.учитывать300еОтветыКакОшибкиToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.учитывать300еОтветыКакОшибкиToolStripMenuItem.Name = "учитывать300еОтветыКакОшибкиToolStripMenuItem";
-            this.учитывать300еОтветыКакОшибкиToolStripMenuItem.Size = new System.Drawing.Size(274, 22);
-            this.учитывать300еОтветыКакОшибкиToolStripMenuItem.Text = "Учитывать 300-е ответы как ошибки";
-            this.учитывать300еОтветыКакОшибкиToolStripMenuItem.Click += new System.EventHandler(this.учитывать300еОтветыКакОшибкиToolStripMenuItem_Click);
-            // 
-            // учитывать400еОтветыКакОшибкиToolStripMenuItem
-            // 
-            this.учитывать400еОтветыКакОшибкиToolStripMenuItem.Checked = true;
-            this.учитывать400еОтветыКакОшибкиToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.учитывать400еОтветыКакОшибкиToolStripMenuItem.Name = "учитывать400еОтветыКакОшибкиToolStripMenuItem";
-            this.учитывать400еОтветыКакОшибкиToolStripMenuItem.Size = new System.Drawing.Size(274, 22);
-            this.учитывать400еОтветыКакОшибкиToolStripMenuItem.Text = "Учитывать 400-е ответы как ошибки";
-            this.учитывать400еОтветыКакОшибкиToolStripMenuItem.Click += new System.EventHandler(this.учитывать400еОтветыКакОшибкиToolStripMenuItem_Click);
-            // 
-            // учитывать500еОтветыКакОшибкиToolStripMenuItem
-            // 
-            this.учитывать500еОтветыКакОшибкиToolStripMenuItem.Checked = true;
-            this.учитывать500еОтветыКакОшибкиToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.учитывать500еОтветыКакОшибкиToolStripMenuItem.Name = "учитывать500еОтветыКакОшибкиToolStripMenuItem";
-            this.учитывать500еОтветыКакОшибкиToolStripMenuItem.Size = new System.Drawing.Size(274, 22);
-            this.учитывать500еОтветыКакОшибкиToolStripMenuItem.Text = "Учитывать 500-е ответы как ошибки";
-            this.учитывать500еОтветыКакОшибкиToolStripMenuItem.Click += new System.EventHandler(this.учитывать500еОтветыКакОшибкиToolStripMenuItem_Click);
-            // 
-            // toolStripSeparator3
-            // 
-            this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(271, 6);
-            // 
-            // всеОтветыКоторыеНе200ToolStripMenuItem
-            // 
-            this.всеОтветыКоторыеНе200ToolStripMenuItem.Name = "всеОтветыКоторыеНе200ToolStripMenuItem";
-            this.всеОтветыКоторыеНе200ToolStripMenuItem.Size = new System.Drawing.Size(274, 22);
-            this.всеОтветыКоторыеНе200ToolStripMenuItem.Text = "Все ответы которые не 200";
-            this.всеОтветыКоторыеНе200ToolStripMenuItem.Click += new System.EventHandler(this.всеОтветыКоторыеНе200ToolStripMenuItem_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -808,7 +808,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
-            this.Text = "TestSitemap v 1.2";
+            this.Text = "TestSitemap v 1.3";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form1_FormClosed);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
