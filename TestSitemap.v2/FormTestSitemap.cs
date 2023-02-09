@@ -15,6 +15,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Xml;
 using System.Diagnostics;
+using TestSitemap;
 
 namespace QASupport.TestSitemap
 {
@@ -798,6 +799,12 @@ namespace QASupport.TestSitemap
         private void toolStripMenuItem25_Click(object sender, EventArgs e)
         {
             richTextBoxOther.SelectAll();
+        }
+
+        private void оПрограммеToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormAbout about = new FormAbout();
+            about.ShowDialog();
         }
     }
 }
