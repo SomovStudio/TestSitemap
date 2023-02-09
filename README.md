@@ -8,7 +8,15 @@
 <hr>
 
 <p align="center">
-  <img src="https://github.com/SomovStudio/somovstudio.github.io/blob/master/img/projects/test_sitemap/test_sitemap.png">
+  <img src="https://github.com/SomovStudio/TestSitemap/blob/master/TestSitemap.v2/img/screenshot.png">
 </p>
 
-Системные требования: Windows 10, 11 (.Net Framework 4.8)
+Системные требования: Windows 7, 8, 10 (Microsoft .NET Framework 4.8)
+
+<hr>
+<br>Программа разработана при поддержке компании "<b>Зионек</b>" https://zionec.ru/
+<br>Компания "<b>Зионек</b>" занимается разработкой "Интернет-магазинов", "Корпоративных порталов", "CRM-систем" и собственных решений.
+<br><br>
+<p align="center">
+  <img src="https://github.com/SomovStudio/Hat/blob/main/Img/partners/companyzionec.png">
+</p>
