@@ -16,7 +16,12 @@
   <img src="https://github.com/SomovStudio/TestSitemap/blob/master/TestSitemap.v2/img/screenshot.png">
 </p>
 
-Системные требования: Windows 7, 8, 10 (Microsoft .NET Framework 4.8)
+Системные требования: 
+<br>
+<ul>
+	<li>Windows 8, 10, 11</li>
+	<li><a href="https://dotnet.microsoft.com/download/dotnet-framework" target="_blank">.NET Framework 4.8</a></li>
+</ul>
 
 <hr>
 <br>Программа разработана при поддержке компании "<b>Зионек</b>" https://zionec.ru/
