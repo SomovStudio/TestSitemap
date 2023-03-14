@@ -1323,7 +1323,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FormTestSitemap";
-            this.Text = "TestSitemap v 2.1";
+            this.Text = "TestSitemap";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormTestSitemap_FormClosed);
             this.Load += new System.EventHandler(this.FormTestSitemap_Load);
             this.menuStrip1.ResumeLayout(false);

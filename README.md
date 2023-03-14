@@ -10,7 +10,7 @@
 Проводить проверку ссылок можно по указанному URL или же выбрав на локальном компьютере файл карты сайта sitemap.xml, а так же вы можете в простом текстовом файле составить список ссылок и выбрать его для проверки.
 <br>
 <br>
-Скачать архив: https://github.com/SomovStudio/TestSitemap/archive/refs/tags/v2.0.zip
+Скачать: https://github.com/SomovStudio/TestSitemap/releases/download/2.1/TestSitemap.exe
 <br>
 (последнее обновление 09.02.2023 версия 2.0)
 <hr>
