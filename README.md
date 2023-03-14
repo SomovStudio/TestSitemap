@@ -12,7 +12,7 @@
 <br>
 Скачать: https://github.com/SomovStudio/TestSitemap/releases/download/2.1/TestSitemap.exe
 <br>
-(последнее обновление 09.02.2023 версия 2.0)
+(последнее обновление 14.03.2023 версия 2.1)
 <hr>
 
 <p align="center">
